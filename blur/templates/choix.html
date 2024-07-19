@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Select Option Interaction</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+body {
+  height: 100%;
+  font-size: 16px;
+  background: #fff;
+}
+
+.select-ctr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 400px;
+  font-family: "Roboto";
+}
+.select-ctr > div {
+  padding: 15px 20px;
+  position: absolute;
+  width: 100%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  
+  
+
+}
+.select-ctr .input-5 {
+  top: 300px;
+}
+.select-ctr .input-4 {
+  top: 240px;
+}
+.select-ctr .input-3 {
+  top: 180px;
+}
+.select-ctr .input-2 {
+  top: 120px;
+}
+.select-ctr .input-1 {
+  top: 60px;
+}
+.select-ctr .input-1 a, .input-2 a ,.input-3 a ,.input-4 a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.select-ctr > div.input {
+  background: #1139e9;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 15px 3px rgba(0, 0, 0, 0.1);
+}
+
+.select-ctr > div.input-preview:before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  bottom: 20px;
+  width: 20px;
+  background: rgba(11, 230, 193, 0.75);
+  -webkit-clip-path: polygon(50% 73%, 0 0, 100% 0);
+  clip-path: polygon(50% 73%, 0 0, 100% 0);
+  padding: 10px;
+  box-sizing: border-box;
+  transition: .3s all ease;
+}
+.alert p{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(231, 27, 27);
+}
+
+    </style>
+
+ 
+</head>
+
+<body>
+    
+  <div class='select-ctr'>
+  <div class='selected-input input-preview '>choisir le document a authentifier</div>
+
+  <div class='input input-1 box-shadow ' id="box1" data-val='Cat'  ><a href="#">acte de naissance</a></div>
+  <div class='input input-2 box-shadow' data-val='Dog'><a href="{% url 'upload_image' %}">carte d'identite</a></div>
+  <div class='input input-3 box-shadow' id="box3" data-val='Birds'><a href="#">diplome</a></div>
+  <div class='input input-4 box-shadow' id="box2" data-val='Cow'><a href="#">recu de paiement</a></div>
+</div>
+
+<script>
+btn = document.getElementById('box1').addEventListener("click", function(){
+  alert("pas DISPONIBLE ");
+  para =document.getElementById('para').innerText='pas disponible pour le moment 😔😓' 
+})
+btn1 = document.getElementById('box2').addEventListener("click", function(){
+  alert("pas DISPONIBLE ");
+  para =document.getElementById('para').innerText='pas disponible pour le moment 😔😟' 
+})
+btn3 = document.getElementById('box3').addEventListener("click", function(){
+  alert("pas DISPONIBLE ");
+  para =document.getElementById('para').innerText='pas disponible pour le moment 😓😟' 
+})
+
+</script>
+<div class="alert"> <p class="text-primary py-5"   id="para"></p></div>
+</body> 
+</html>
